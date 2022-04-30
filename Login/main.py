@@ -36,6 +36,7 @@ def auto_run():
         start_menu()
     elif not os.path.isfile(f'{cwd}\\util\\database.txt'):
         f = open('util\\database.txt', 'a+')
+        os.system("attrib +h util\\database.txt")
         f.close()
         start_menu()
     else:
