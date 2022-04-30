@@ -40,7 +40,7 @@ def register():
     clear()
     user_name = str(input(f'{Fore.CYAN}Enter your username. >>'))
     user_save = str(f'Username: {user_name}')
-    with open('database.txt', 'r') as reg:
+    with open('util\\database.txt', 'r') as reg:
         for line in reg:
             if user_save in line:
                 user_taken()
