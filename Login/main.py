@@ -1,6 +1,7 @@
 from util.register import *
 from colorama import Fore
 from time import sleep
+import win32console
 import os
 
 clear = lambda: os.system("cls")
@@ -34,6 +35,7 @@ def start_menu():
 
 
 def auto_run():
+    win32console.SetConsoleTitle("Advanced Python Login System by fini")
     if os.path.isfile(f"{cwd}\\util\\database.txt"):
         start_menu()
     elif not os.path.isfile(f"{cwd}\\util\\database.txt"):

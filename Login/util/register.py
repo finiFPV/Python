@@ -5,7 +5,9 @@ import subprocess
 import os
 import random
 import string
+import datetime
 
+now = datetime.datetime.now()
 digits = list(string.digits)
 password_valid = True
 email_valid = False
@@ -28,6 +30,7 @@ def save():
         save.write(f"Membership: none.membership.{special_key}\n")
         save.write(f"Admin: false.admin.{special_key}\n")
         save.write(f"Owner: false.status.{special_key}\n")
+        save.write(f"Registered at: {time}.time.{special_key}\n")
         save.write("\n")
     save.close()
 
@@ -133,6 +136,9 @@ def register():
     clear()
     while email_valid == False:
         email_verify(email)
+    global time
+    time = str(now.strftime("%Y-%m-%d %H:%M:%S"))
+    global time_save
     save()
     print(f"{Fore.CYAN}Registered successfully! You can login now.")
     sleep(3)
