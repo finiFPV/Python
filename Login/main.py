@@ -1,7 +1,6 @@
 from util.register import *
 from colorama import Fore
 from time import sleep
-from os.path import exists
 import os
 
 clear = lambda: os.system('cls')
