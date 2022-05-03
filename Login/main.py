@@ -34,8 +34,7 @@ def start_menu():
         start_menu()
 
 
-def auto_run():
-    win32console.SetConsoleTitle("Advanced Python Login System by fini")
+def database_connect():
     if os.path.isfile(f"{cwd}\\util\\database.txt"):
         start_menu()
     elif not os.path.isfile(f"{cwd}\\util\\database.txt"):
@@ -44,7 +43,21 @@ def auto_run():
         f.close()
         start_menu()
     else:
-        print(f"{Fore.RED}Databse creatition error!")
+        print(f"{Fore.RED}Databse connection error!")
+        sleep(2)
+        quit()
+
+
+def auto_run():
+    win32console.SetConsoleTitle("Advanced Python Login System by fini")
+    if os.path.isfile(f"{cwd}\\util\\settings.json"):
+        database_connect()
+    elif not os.path.isfile(f"{cwd}\\util\\settings.json"):
+        f = open("util\\settings.json", "a+")
+        f.close()
+        database_connect()
+    else:
+        print(f"{Fore.RED}Settings not found!")
         sleep(2)
         quit()
 
