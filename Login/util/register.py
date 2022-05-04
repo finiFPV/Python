@@ -131,8 +131,8 @@ def register():
     while email_valid == False:
         email_verify(email)
     membership = "none"
-    admin = False
-    owner = False
+    admin = 'false'
+    owner = 'false'
     level = 0
     time = str(now.strftime("%Y-%m-%d %H:%M:%S"))
     save(

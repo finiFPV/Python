@@ -1,4 +1,5 @@
 from util.register import *
+from util.login import *
 from colorama import Fore
 from time import sleep
 import win32console
@@ -19,7 +20,8 @@ def start_menu():
     clear()
     if start_choise == "1":
         clear()
-        # WORK ON THIS
+        login()
+        start_menu()
     elif start_choise == "2":
         register()
         clear()
